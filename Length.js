@@ -1,19 +1,11 @@
 const articule = (artist) => {
-  let title = "";
-  let sec = "";
   let pro = "";
   let allt = artist.split(" ");
-
-  for (let i = 0; i < allt.length; i++) {
-    if (allt[i].length > 3) {
-      title = allt[i - 3];
-    } else {
-      sec = artist;
-    }
-    pro = title ? ( title + ' ...') : (sec);
+  if(allt.length > 3){
+    pro = allt[0] +' '+ allt[1] +' '+ allt[2] +' '+ '...'
+  }else{
+    pro = allt.join(' ')
   }
-  console.log(pro);
   return pro
 };
-articule("alexander la rosa perez")
 module.exports = articule;
